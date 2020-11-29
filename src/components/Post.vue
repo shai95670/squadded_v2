@@ -1,7 +1,7 @@
 <template>
   <div class="post-container">
      <div class="author-info-container">
-         <avatar username="post.authorName"></avatar>
+         <avatar class="author-avatar" username="post.authorName"></avatar>
          <span>{{post.authorName}}</span>
      </div>
      <div class="post-info-container">
@@ -16,7 +16,8 @@
      
      <div v-if="isShown" class="comment-container">
        <div class="comment-input-section">
-         <textarea v-model="commentTxt"></textarea><button v-on:click="emitComment(post.id)" >Add Comment</button>
+         <textarea v-model="commentTxt"></textarea>
+         <i v-on:click="emitComment(post.id)" class="fas fa-paper-plane"></i>
        </div>
        <CommentSection v-bind:comments="post.comments"/>
      </div>
@@ -50,6 +51,10 @@ export default {
   methods: {
     showCommentSection(){
       console.log('test')
+      if(this.isShown) {
+        this.isShown = false;
+        return;
+      }
       this.isShown = true;
     },
     emitLike(id){
@@ -58,6 +63,7 @@ export default {
     emitComment(id){
       if (!this.commentTxt) return;
       this.$emit('addCommentClicked', {commentTxt:this.commentTxt, postId:id})
+      this.commentTxt = '';
     }
   }
 };
@@ -77,6 +83,11 @@ export default {
       align-items: center;
       background-color: white;
       margin-bottom: 7px;
+      padding-top: 6px;
+
+      .author-avatar {
+        margin-left: 7px;
+      }
 
       span {
         font-size: 1.8rem;
@@ -108,6 +119,7 @@ export default {
 .comment-input-section {
   display: flex;
   justify-content: center;
+  align-items: center;
 
   textarea {
         border: none;
@@ -119,6 +131,11 @@ export default {
         resize: none;
         background-color: #fafafa;
         border-bottom: 2px solid black;
+  }
+
+  i {
+    font-size: 20px;
+    cursor: pointer;
   }
 }
 </style>

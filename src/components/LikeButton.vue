@@ -1,6 +1,6 @@
 <template>
   <div v-on:click="emitLike">
-    <i class="like-icon far fa-heart" ></i><span>{{likeCnt}}</span>
+    <i v-bind:class="classObject"></i><span>{{likeCnt}}</span>
   </div>
 </template>
 
@@ -11,18 +11,21 @@ export default {
   props: {
     likeCnt: 0
   },
-  data: {
-    // classObject: {
-    //   'white-like': likeCnt < 1,
-    //   'red-like':  likeCnt >= 3,
-    //   'gray-like': likeCnt < 3 && likeCnt > 1
-    // }
-  },
-  components: {
-  },
   methods: {
     emitLike(event){
       this.$emit("likeClicked")
+    }
+  },
+  computed: {
+    classObject: function () {
+      return {
+        'white-like': this.likeCnt < 1,
+        'red-like':  this.likeCnt >= 3,
+        'gray-like': this.likeCnt < 3 && this.likeCnt > 1,
+        "like-icon": true,
+        "far": true,
+        "fa-heart": true
+      }
     }
   }
 };

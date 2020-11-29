@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <MarketPlace msg="Welcome to Your Vue.js App"/>
+    <i class="far fa-heart"></i>
   </div>
 </template>
 

@@ -20,5 +20,9 @@ export default {
 <style>
 .comments-container {
   list-style: none;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 </style>

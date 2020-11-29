@@ -1,5 +1,7 @@
 <template>
-  <button v-on:click="emitComment">Comment {{commentCnt}}</button>
+    <div v-on:click="emitComment">
+      <i class="comment-icon far fa-comment"></i><span>{{commentCnt}}</span>
+    </div>
 </template>
 
 <script>
@@ -19,13 +21,16 @@ export default {
 };
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss" scoped>
+div {
+  cursor: pointer;
+  .comment-icon {
+    font-size: 30px
+  }
+  span {
+    position: relative;
+    right: 19px;
+    bottom: 8px;
+  }
 }
 </style>

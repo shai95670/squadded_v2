@@ -15,7 +15,9 @@
      </div>
      
      <div v-if="isShown" class="comment-container">
-       <textarea v-model="commentTxt"></textarea><button v-on:click="emitComment(post.id)" >Add Comment</button>
+       <div class="comment-input-section">
+         <textarea v-model="commentTxt"></textarea><button v-on:click="emitComment(post.id)" >Add Comment</button>
+       </div>
        <CommentSection v-bind:comments="post.comments"/>
      </div>
   </div>
@@ -63,41 +65,60 @@ export default {
 
 <style lang="scss">
 .post-container {
-  display: flex;
-  flex-direction: column;
-  width: 40%;
-  margin-bottom: 32px;
-  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.15);
-  border-radius: 2%;
-
-  .author-info-container {
     display: flex;
-    align-items: center;
-    background-color: white;
-    margin-bottom: 7px;
-
-    span {
-      font-size: 1.8rem;
-      width: 22%;
-    }
-  }
-  .post-thumbnail {
-    width:100%;
-    height:200px;
-    background-color: #d9d9d9;
+    flex-direction: column;
+    width: 25%;
+    margin-bottom: 32px;
+    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.15);
     border-radius: 2%;
-  }
 
-  p {
-    position: relative;
-    bottom: 90px;
-    font-size: 1.5rem;
-    color: white;
-  }
+    .author-info-container {
+      display: flex;
+      align-items: center;
+      background-color: white;
+      margin-bottom: 7px;
 
-  .post-statistics-container {
-    display: flex;
-    justify-content: space-around;
+      span {
+        font-size: 1.8rem;
+        width: 22%;
+      }
+    }
+    .post-thumbnail {
+      width:100%;
+      height:200px;
+      background-color: #d9d9d9;
+      border-radius: 2%;
+    }
+
+    p {
+      position: relative;
+      bottom: 90px;
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    .post-statistics-container {
+        display: flex;
+        justify-content: space-around;
+        height: 48px;
+        align-items: baseline;
+    }
+}
+
+.comment-input-section {
+  display: flex;
+  justify-content: center;
+
+  textarea {
+        border: none;
+        overflow: auto;
+        outline: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        resize: none;
+        background-color: #fafafa;
+        border-bottom: 2px solid black;
   }
 }
 </style>

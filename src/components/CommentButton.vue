@@ -1,24 +1,25 @@
 <template>
-  <div id="app">
-    <MarketPlace msg="Welcome to Your Vue.js App"/>
-  </div>
+  <button v-on:click="emitComment">Comment {{commentCnt}}</button>
 </template>
 
 <script>
-import MarketPlace from './components/MarketPlace.vue'
 
 export default {
-  name: 'App',
+  name: "CommentButton",
+  props: {
+    commentCnt: 0
+  },
   components: {
-    MarketPlace
+  },
+  methods: {
+    emitComment(event){
+      this.$emit("commentClicked")
+    }
   }
-}
+};
 </script>
 
-<style lang="scss">
-html {
-  background-color: #fafafa;
-}
+<style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

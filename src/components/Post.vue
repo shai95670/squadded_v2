@@ -73,7 +73,7 @@ export default {
 .post-container {
     display: flex;
     flex-direction: column;
-    width: 25%;
+    width: 23%;
     margin-bottom: 32px;
     box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.15);
     border-radius: 2%;

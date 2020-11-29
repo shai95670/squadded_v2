@@ -39,6 +39,7 @@ export default {
 .feed-container {
   display: flex;
   align-items: center;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 </style>

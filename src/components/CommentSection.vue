@@ -1,6 +1,6 @@
 <template>
   <ul class="comments-container">
-     <li v-for="comment in comments" :key="idx">{{comment}}</li> 
+     <li v-for="(comment, i) in comments" :key="i">{{comment}}</li> 
   </ul>
 </template>
 

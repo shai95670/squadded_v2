@@ -19,7 +19,7 @@ export default {
   computed: {
     classObject: function () {
       return {
-        'white-like': this.likeCnt < 1,
+        // 'white-like': this.likeCnt < 1,
         'red-like':  this.likeCnt >= 3,
         'gray-like': this.likeCnt < 3 && this.likeCnt > 1,
         "like-icon": true,

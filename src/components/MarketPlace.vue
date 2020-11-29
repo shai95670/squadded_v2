@@ -12,13 +12,6 @@ export default {
   components: {
     Feed,
   },
-  props: {
-  },
-  methods: {
-  },
-  created(){
-      console.log('test');
-  }
 };
 </script>
 

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
+    <h1><span>M</span>arket <span>P</span>lace</h1>
     <MarketPlace msg="Welcome to Your Vue.js App"/>
-    <i class="far fa-heart"></i>
   </div>
 </template>
 
@@ -16,16 +16,19 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 html {
   background-color: #fafafa;
-}
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+
+  h1 {
+    font-family: fantasy;
+    text-align: center;
+    font-size: 39px;
+    color: dimgrey;
+  }
+
+  span {
+    color: black;
+  }
 }
 </style>

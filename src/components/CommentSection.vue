@@ -11,9 +11,6 @@ export default {
   props: {
     comments: Array
   },
-  components: {
-  },
- 
 };
 </script>
 

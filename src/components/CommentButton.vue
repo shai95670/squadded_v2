@@ -11,8 +11,6 @@ export default {
   props: {
     commentCnt: 0
   },
-  components: {
-  },
   methods: {
     emitComment(event){
       this.$emit("commentClicked")

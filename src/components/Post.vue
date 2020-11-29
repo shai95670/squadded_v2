@@ -73,7 +73,7 @@ export default {
 .post-container {
     display: flex;
     flex-direction: column;
-    width: 23%;
+    width: 334px;
     margin-bottom: 32px;
     box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.15);
     border-radius: 2%;
@@ -106,6 +106,7 @@ export default {
       bottom: 90px;
       font-size: 1.5rem;
       color: white;
+      text-align: center;
     }
 
     .post-statistics-container {
@@ -129,7 +130,6 @@ export default {
         -moz-box-shadow: none;
         box-shadow: none;
         resize: none;
-        background-color: #fafafa;
         border-bottom: 2px solid black;
   }
 

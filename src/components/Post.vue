@@ -87,6 +87,7 @@ export default {
 
       .author-avatar {
         margin-left: 7px;
+        margin-right: 7px;
       }
 
       span {
